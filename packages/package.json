@@ -1,0 +1,46 @@
+{
+  "name": "alloy-form",
+  "version": "1.0.0",
+  "homepage": "https://github.com/lvgx1128/alloy-form",
+  "bugs": {
+    "url": "https://github.com/lvgx1128/alloy-form/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lvgx1128/alloy-form.git"
+  },
+  "license": "ISC",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "files": [
+    "dist",
+    "es",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "release": "np --yolo=true"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "lodash-es": "^4.17.21"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
+}
