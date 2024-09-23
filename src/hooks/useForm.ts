@@ -42,7 +42,6 @@ export function useForm({ schema, data }: IProps): FormInstanceProps {
       ...formDataRef.current,
       ...param
     }
-    console.log('🚀 ~ setData ~ formDataRef.current:', formDataRef.current)
     setState({ formData: formDataRef.current })
   }
   const setDataByKey = (key: string, value: any) => {
@@ -50,7 +49,6 @@ export function useForm({ schema, data }: IProps): FormInstanceProps {
       ...formDataRef.current,
       [key]: value
     }
-    console.log('🚀 ~ file: useForm.ts ~ line 42 ~ setDataByKey ~ value', formDataRef.current)
     setState({ formData: formDataRef.current })
   }
   const clearData = () => {

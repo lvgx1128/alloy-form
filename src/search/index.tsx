@@ -3,6 +3,7 @@ import { ActionContext, StoreContext } from '@/hooks/context'
 import 'rc-tooltip/assets/bootstrap_white.css'
 import React, { useMemo } from 'react'
 import '../index.css'
+import '../search.css'
 import FieldRender from './FieldRender'
 
 type TProp = {
@@ -10,9 +11,10 @@ type TProp = {
   components: Record<string, React.ReactNode>
   watch?: Record<string, (val: any, key?: string) => any>
   className?: string
+  style?: React.CSSProperties
 }
 
-export default function AlloyForm({ form, watch, className, components }: TProp) {
+export default function AlloyForm({ form, watch, className, components, style }: TProp) {
   const { schema, formData, ruleResult, ...actions } = form
 
   const store = useMemo(
@@ -29,7 +31,7 @@ export default function AlloyForm({ form, watch, className, components }: TProp)
   return (
     <ActionContext.Provider value={action}>
       <StoreContext.Provider value={store}>
-        <FieldRender className={className} />
+        <FieldRender className={className} style={style} />
       </StoreContext.Provider>
     </ActionContext.Provider>
   )

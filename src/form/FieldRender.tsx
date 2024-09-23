@@ -1,10 +1,10 @@
+import { useAction, useStore } from '@/hooks/context'
 import classnames from 'classnames'
 import { set } from 'lodash-es'
 import React from 'react'
 import type { FieldItemProps, RuleProps, StoreProps } from '../@types'
 import { ActionProps } from '../@types/index'
 import FieldItem from './FieldItem'
-import { useAction, useStore } from './hooks/context'
 
 interface IFieldItemProps extends FieldItemProps {
   isRequired?: boolean

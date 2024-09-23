@@ -15,8 +15,8 @@ filePath: null
 
 ```tsx
 import React from 'react';
-import { AlloyForm,  useForm, AlloySearch } from 'alloy-form';
-import { Input } from 'antd'
+import { AlloyForm, useForm, AlloySearch } from 'alloy-form';
+import { Input, Select } from 'antd'
 
 
 const schema = {
@@ -40,16 +40,75 @@ const schema = {
         type: 'string',
       },
     },
+    input1: {
+      label: '输入框',
+      format: 'input',
+      props: {
+        placeholder: '请输入订单编号',
+        type: 'string',
+      },
+    },
+    inputCopy1: {
+      label: '联动输入框',
+      format: 'input',
+      props: {
+        placeholder: '请输入订单编号',
+        type: 'string',
+      },
+    },
+    select: {
+      label: '输入框',
+      format: 'select',
+      props: {
+        placeholder: '请输入订单编号',
+        type: 'string',
+      },
+    },
+    select1: {
+      label: '输入框',
+      format: 'select',
+      props: {
+        placeholder: '请输入订单编号',
+        type: 'string',
+      },
+    },
+    selectCopy1: {
+      label: '联动输入框',
+      format: 'select',
+      props: {
+        placeholder: '请输入订单编号',
+        type: 'string',
+      },
+    },
+     selectCopy2: {
+      label: '联动输入框',
+      format: 'select',
+      props: {
+        placeholder: '请输入订单编号',
+        type: 'string',
+      },
+    },
+    inputCopy11: {
+      label: '联动输入框',
+      format: 'input',
+      props: {
+        placeholder: '请输入订单编号',
+        type: 'string',
+      },
+    },
+    input11: {
+      label: '输入框',
+      format: 'input',
+      props: {
+        placeholder: '请输入订单编号',
+        type: 'string',
+      },
+    },
   },
 };
 
 export default function WatchFormDataDemo(): JSX.Element {
   const form = useForm({ schema });
-  const watch = {
-    input: (val) => {
-      form.setData({ inputCopy: val });
-    },
-  };
-  return <AlloySearch form={form} watch={watch} components={{ Input }} />;
+  return <AlloySearch form={form} components={{ Input, Select }} style={{ padding: 24}} />;
 }
 ```

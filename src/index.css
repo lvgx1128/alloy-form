@@ -1,3 +1,7 @@
+.alloy-form-container{
+  box-sizing: border-box;
+}
+
 .alloy-form-container * {
   box-sizing: border-box;
 }
@@ -5,6 +9,12 @@
 .alloy-form-container .alloy-form-item-box {
   margin-bottom: 18px;
   padding-right: 5px;
+}
+
+/* 查询下边距 */
+
+.alloy-search-container .alloy-form-item-box {
+  margin-bottom: 10px;
 }
 
 .alloy-form-container .alloy-form-item-box.alloy-form-inline {
@@ -127,7 +137,7 @@
 }
 
 .alloy-form-container .label-title::after {
-  margin: 0 8px 0 5px;
+  margin: 0 5px 0 3px;
   content: ':';
 }
 
@@ -178,13 +188,12 @@
 }
 
 .overlay-tooltip .rc-tooltip-arrow{
-  border-bottom-color: rgb(0, 0, 0) !important;
+  border-bottom-color: rgb(0 0 0) !important;
 }
 
 .overlay-tooltip .rc-tooltip-inner{
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0 0 0);
   color: #fff;
   min-height: auto;
   border: 0;
-
 }
