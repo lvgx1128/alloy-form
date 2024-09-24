@@ -1,3 +1,4 @@
 import AlloyForm from "./form";
-import { useForm } from "./form/hooks/useForm";
-export { AlloyForm, useForm };
+import { useForm } from "./hooks/useForm";
+import AlloySearch from "./search";
+export { AlloyForm, AlloySearch, useForm };

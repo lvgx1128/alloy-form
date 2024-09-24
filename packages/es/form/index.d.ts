@@ -1,7 +1,7 @@
 import { FormInstanceProps } from "../@types";
 import 'rc-tooltip/assets/bootstrap_white.css';
 import React from 'react';
-import './index.css';
+import '../index.css';
 declare type TProp = {
     form: FormInstanceProps;
     components: Record<string, React.ReactNode>;

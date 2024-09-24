@@ -1,4 +1,5 @@
 import AlloyForm from './form';
-import { useForm } from './form/hooks/useForm';
+import { useForm } from './hooks/useForm';
+import AlloySearch from './search';
 export type { FormInstanceProps, RuleProps, SchemaProps } from './@types';
-export { AlloyForm, useForm };
+export { AlloyForm, AlloySearch, useForm };
