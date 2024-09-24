@@ -12,9 +12,21 @@ type TProp = {
   watch?: Record<string, (val: any, key?: string) => any>
   className?: string
   style?: React.CSSProperties
+  padding: [number?, number?, number?, number?]
+  onSearch?: (data: Record<string, any>) => void
+  onReset?: () => void
 }
 
-export default function AlloyForm({ form, watch, className, components, style }: TProp) {
+export default function AlloyForm({
+  form,
+  watch,
+  className,
+  components,
+  style,
+  padding,
+  onSearch,
+  onReset
+}: TProp) {
   const { schema, formData, ruleResult, ...actions } = form
 
   const store = useMemo(
@@ -31,7 +43,13 @@ export default function AlloyForm({ form, watch, className, components, style }:
   return (
     <ActionContext.Provider value={action}>
       <StoreContext.Provider value={store}>
-        <FieldRender className={className} style={style} />
+        <FieldRender
+          className={className}
+          style={style}
+          padding={padding}
+          onSearch={onSearch}
+          onReset={onReset}
+        />
       </StoreContext.Provider>
     </ActionContext.Provider>
   )

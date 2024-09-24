@@ -1,8 +1,8 @@
-import { useStore } from '@/hooks/context'
+import { useAction, useStore } from '@/hooks/context'
 import classnames from 'classnames'
 import elementResizeEvent from 'element-resize-event'
 import React, { useEffect, useState } from 'react'
-import type { FieldItemProps, StoreProps } from '../@types'
+import type { ActionProps, FieldItemProps, StoreProps } from '../@types'
 import FieldItem from './FieldItem'
 
 type IFieldItemProps = FieldItemProps & { isOverstep?: boolean }
@@ -10,25 +10,36 @@ type IFieldItemProps = FieldItemProps & { isOverstep?: boolean }
 const widthForSeat: { width: [number, number]; oneLineSeat: number }[] = [
   {
     width: [0, 1200],
-    oneLineSeat: 4
+    oneLineSeat: 3
   },
   {
     width: [1240, 1450],
+    oneLineSeat: 4
+  },
+  {
+    width: [1450, 1720],
     oneLineSeat: 5
   },
   {
-    width: [1450, 10_000],
+    width: [1720, 100_000],
     oneLineSeat: 6
   }
 ]
 export default function FieldRender({
   className,
-  style
+  style,
+  padding,
+  onSearch,
+  onReset
 }: {
   className?: string
   style?: React.CSSProperties
+  padding: [number?, number?, number?, number?]
+  onSearch?: (value: Record<string, any>) => void
+  onReset?: () => void
 }): JSX.Element {
   const { schema } = useStore() as StoreProps
+  const { getData, clearData } = useAction() as ActionProps
   // 展示位置个数
   const [lineCount, setLineCount] = useState<number>(4)
   // 查询表展开状态
@@ -83,6 +94,8 @@ export default function FieldRender({
     // 超出查询范围 样式隐藏
     item.isOverstep = residSeat < 0 && searchStatus === 'collapse'
   })
+  // eslint-disable-next-line no-param-reassign
+  const paddingStyle = padding?.reduce((acc, item) => (acc += `${item}px `), '')
   return (
     <div
       className={classnames(
@@ -94,7 +107,10 @@ export default function FieldRender({
       style={style}
       ref={searchFormBox}
     >
-      <div className={classnames({ 'alloy-search-container-expand': searchStatus === 'expand' })}>
+      <div
+        style={{ padding: paddingStyle }}
+        className={classnames('alloy-search-form', { expand: searchStatus === 'expand' })}
+      >
         {fieldList.map((item: IFieldItemProps) => {
           return (
             <div
@@ -115,8 +131,24 @@ export default function FieldRender({
           )
         })}
         <div className="alloy-search-button">
-          <div className="alloy-button primary">查询</div>
-          <div className="alloy-button">重置</div>
+          <div
+            className="alloy-button primary"
+            onClick={() => {
+              const formData = getData?.() || {}
+              onSearch?.(formData)
+            }}
+          >
+            查询
+          </div>
+          <div
+            className="alloy-button"
+            onClick={() => {
+              clearData?.()
+              onReset?.()
+            }}
+          >
+            重置
+          </div>
           {seatCount > lineCount * 2 - 1 ? (
             <div
               className="alloy-button"

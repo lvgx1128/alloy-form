@@ -77,13 +77,13 @@
 }
 
 .alloy-search-container.form-line-2 {
-  height: 88px;
+  height: 108px;
 }
 
-.alloy-search-container-expand {
+
+.alloy-search-form.expand {
   position: absolute;
   z-index: 9;
   width: 100%;
   box-shadow: 0 10px 10px -6px #94ade4cc;
-  padding-bottom: 16px;
 }
