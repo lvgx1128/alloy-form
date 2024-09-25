@@ -7,7 +7,7 @@ import FieldRender from './FieldRender'
 
 type TProp = {
   form: FormInstanceProps
-  components: Record<string, React.ReactNode>
+  components: Record<string, any>
   watch?: Record<string, (val: any, key?: string) => any>
   className?: string
 }

@@ -34,7 +34,7 @@ export default function FieldRender({
 }: {
   className?: string
   style?: React.CSSProperties
-  padding: [number?, number?, number?, number?]
+  padding?: [number?, number?, number?, number?]
   onSearch?: (value: Record<string, any>) => void
   onReset?: () => void
 }): JSX.Element {

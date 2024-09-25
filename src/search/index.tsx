@@ -8,16 +8,16 @@ import FieldRender from './FieldRender'
 
 type TProp = {
   form: FormInstanceProps
-  components: Record<string, React.ReactNode>
+  components: Record<string, any>
   watch?: Record<string, (val: any, key?: string) => any>
   className?: string
   style?: React.CSSProperties
-  padding: [number?, number?, number?, number?]
+  padding?: [number?, number?, number?, number?]
   onSearch?: (data: Record<string, any>) => void
   onReset?: () => void
 }
 
-export default function AlloyForm({
+export default function AlloySearch({
   form,
   watch,
   className,
