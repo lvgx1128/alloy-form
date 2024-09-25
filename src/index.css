@@ -197,3 +197,94 @@
   min-height: auto;
   border: 0;
 }
+
+/* 查询条件 */
+.alloy-search-button {
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.alloy-search-button .alloy-button {
+  display: inline-block;
+  box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #4096ff;
+  border: 1px solid #4096ff;
+
+  /* background-color: #4096ff; */
+}
+
+.alloy-search-button .primary {
+  color: #fff;
+  background-color: #4096ff;
+}
+
+.alloy-search-button .alloy-button::after {
+  content: ' ';
+}
+
+.alloy-search-button .alloy-button:active {
+  color: #0958d9;
+  border: 1px solid #0958d9;
+}
+
+.alloy-search-button .primary:active {
+  color: #fff;
+  border: 1px solid #0958d9;
+  background-color: #0958d9;
+}
+
+.alloy-search-button .alloy-button + .alloy-button {
+  margin-left: 10px;
+}
+
+.alloy-search-container.line-3-seat .alloy-form-item-box.alloy-form-inline {
+  width: 33.33%;
+}
+
+.alloy-search-container.line-3-seat .x2.alloy-form-inline {
+  width: 66.66%;
+}
+
+.alloy-search-container.line-4-seat .alloy-form-item-box.alloy-form-inline {
+  width: 25%;
+}
+
+.alloy-search-container.line-4-seat .x2.alloy-form-inline {
+  width: 50%;
+}
+
+.alloy-search-container.line-5-seat .alloy-form-item-box.alloy-form-inline {
+  width: 20%;
+}
+
+.alloy-search-container.line-5-seat .x2.alloy-form-inline {
+  width: 40%;
+}
+
+.alloy-search-container.line-6-seat .alloy-form-item-box.alloy-form-inline {
+  width: 16.66%;
+}
+
+.alloy-search-container.line-6-seat .x2.alloy-form-inline {
+  width: 33.33%;
+}
+
+.alloy-search-container.form-line-1 {
+  height: 68px;
+}
+
+.alloy-search-container.form-line-2 {
+  height: 108px;
+}
+
+
+.alloy-search-form.expand {
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  box-shadow: 0 10px 10px -6px #94ade4cc;
+}

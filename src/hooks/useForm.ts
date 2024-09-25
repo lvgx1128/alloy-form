@@ -10,7 +10,7 @@ interface IProps {
 
 const rulesWhiteList = ['rate', 'switch']
 
-export function useForm({ schema, data }: IProps): FormInstanceProps {
+export default function useForm({ schema, data }: IProps): FormInstanceProps {
   const useSet = (x: any) =>
     useReducer((a: Record<string, any>, b: Record<string, any>) => ({ ...a, ...b }), x)
 

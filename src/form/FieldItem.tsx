@@ -1,3 +1,4 @@
+import type { FieldItemProps } from '@/@types/index'
 import Tips from '@/components/Tips'
 import { useAction, useStore } from '@/hooks/context'
 import { useUpdateLayoutEffect } from '@/hooks/useUpdateLayoutEffect'
@@ -5,7 +6,6 @@ import { getValuesByEvt, isHasInputTarget, validateRule } from '@/utils'
 import classnames from 'classnames'
 import { isArray, set } from 'lodash-es'
 import React, { memo, useState } from 'react'
-import type { FieldItemProps } from '../@types/index'
 
 interface IProps {
   fieldItem: FieldItemProps

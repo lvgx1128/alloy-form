@@ -1,5 +1,5 @@
+import type { FieldItemProps } from "../@types/index";
 import React from 'react';
-import type { FieldItemProps } from '../@types/index';
 interface IProps {
     fieldItem: FieldItemProps;
 }

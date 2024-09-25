@@ -1,8 +1,8 @@
+import type { ActionProps, FieldItemProps, StoreProps } from '@/@types'
 import { useAction, useStore } from '@/hooks/context'
 import classnames from 'classnames'
 import elementResizeEvent from 'element-resize-event'
 import React, { useEffect, useState } from 'react'
-import type { ActionProps, FieldItemProps, StoreProps } from '../@types'
 import FieldItem from './FieldItem'
 
 type IFieldItemProps = FieldItemProps & { isOverstep?: boolean }

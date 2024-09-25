@@ -3,7 +3,6 @@ import { ActionContext, StoreContext } from '@/hooks/context'
 import 'rc-tooltip/assets/bootstrap_white.css'
 import React, { useMemo } from 'react'
 import '../index.css'
-import '../search.css'
 import FieldRender from './FieldRender'
 
 type TProp = {
