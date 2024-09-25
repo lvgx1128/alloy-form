@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git@github.com:lvgx1128/alloy-form.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
