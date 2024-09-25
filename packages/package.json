@@ -1,6 +1,6 @@
 {
   "name": "alloy-form",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "homepage": "https://github.com/lvgx1128/alloy-form",
   "bugs": {
     "url": "https://github.com/lvgx1128/alloy-form/issues"
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
+    "element-resize-event": "^3.0.6",
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
