@@ -211,24 +211,36 @@
   padding: 5px 15px;
   cursor: pointer;
   border-radius: 6px;
-  color: #4096ff;
-  border: 1px solid #4096ff;
+  color: #1677ff;
+  border: 1px solid #1677ff;
 
   /* background-color: #4096ff; */
 }
 
 .alloy-search-button .primary {
   color: #fff;
-  background-color: #4096ff;
+  background-color: #1677ff;
 }
 
 .alloy-search-button .alloy-button::after {
   content: ' ';
 }
 
+.alloy-search-button .alloy-button:hover {
+  color: #4096ff;
+  border: 1px solid #4096ff;
+}
+
 .alloy-search-button .alloy-button:active {
   color: #0958d9;
   border: 1px solid #0958d9;
+}
+
+
+.alloy-search-button .primary:hover {
+  color: #fff;
+  border: 1px solid #4096ff;
+  background-color: #4096ff;
 }
 
 .alloy-search-button .primary:active {
